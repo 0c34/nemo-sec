@@ -8,7 +8,7 @@
 
 echo "<!DOCTYPE html>
      <head>
-        <title>XSS Vulnerability</title>
+        <title>IDOR Vulnerability</title>
         <link rel=\"stylesheet\" href=\"../../css/bootstrap.min.css\">
         <script type=\"text/javascript\" src=\"../../js/jquery-1.11.2.min.js\"></script>
         <script type=\"text/javascript\">
