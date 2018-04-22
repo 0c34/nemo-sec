@@ -9,9 +9,9 @@
 //db config
  
 define("USER", "root");
-define("PASS", "");
+define("PASS", "saltiga");
 define("HOST", "localhost");
-define("DBN",  "nvwp");
+define("DBN",  "nemo_dwp");
 
 
 //directory config
@@ -26,7 +26,7 @@ $vStatus['xss'] = 'true';
 $vStatus['v_upload'] = 'false';
 $vStatus['v_download'] = 'false';
 $vStatus['lfi'] = 'false';
-$vStatus['dirlist'] = 'false';
+$vStatus['brokenauth'] = 'true';
 
 //array bulan
 $bulan = Array("Januari",

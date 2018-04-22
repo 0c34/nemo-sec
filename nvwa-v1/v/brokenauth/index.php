@@ -7,7 +7,7 @@
  */
 require_once '../../config/config.php';
 
-if ($vStatus['xss'] == 'false'){
+if ($vStatus['brokenauth'] == 'false'){
     header("Location:../../linkErrorMessage.php");
     exit();
 }

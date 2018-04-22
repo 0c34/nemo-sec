@@ -12,7 +12,7 @@ require_once lib.'db.class.php';
 require_once lib.'tabelGrid.php';
 require_once lib.'function.php';
 
-if ($vStatus['sqli'] == 'false'){
+if ($vStatus['v_upload'] == 'false'){
     header("Location:../../linkErrorMessage.php");
     exit();
 }

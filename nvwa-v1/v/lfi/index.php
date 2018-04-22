@@ -5,7 +5,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+require_once '../../config/config.php';
 
+if ($vStatus['lfi'] == 'false'){
+    header("Location:../../linkErrorMessage.php");
+    exit();
+}
 echo "<!DOCTYPE html>
      <head>
         <title>LFI Vulnerability</title>

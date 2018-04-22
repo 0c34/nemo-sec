@@ -38,7 +38,7 @@ if ($vStatus['sqli'] == 'false'){
     <body>
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Hillo WebSec</a>
+                <a class="navbar-brand" href="../../index.php">Nemo Security</a>
             </div>
         <div>
             <ul class="nav navbar-nav">

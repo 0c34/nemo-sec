@@ -34,15 +34,16 @@ echo "<!DOCTYPE html>
         <div class=\"row\">";
 ?>
 <div class="container">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
         <a class="btn btn-lg btn-primary" href='v/sqli/'>SQL INJECTION</a>
         <a class="btn btn-lg btn-success" href="v/xss/">XSS</a>
-        <a class="btn btn-lg btn-danger" href="v/xss/">IDOR</a>
-        <a class="btn btn-lg btn-default" href="v/lfi/index.php?page=home.php">LFI</a>
+        <a class="btn btn-lg btn-danger" href="v/idor/">IDOR</a>
+        <a class="btn btn-lg btn-success" href="v/brokenauth/">Broken Auth</a>
+        <a class="btn btn-lg btn-primary" href="v/lfi/index.php?page=home.php">LFI</a>
         <a class="btn btn-lg btn-info" href="v/upload_v/">UPLOAD</a>
     </div>
-    <div class="col-md-3"></div>
+    <div class="col-md-2"></div>
     
 </div>
 <?php

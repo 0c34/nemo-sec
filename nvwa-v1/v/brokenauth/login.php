@@ -23,7 +23,7 @@ if(isset($_POST['login'])){
         $_SESSION['uname']  = $hasil['email'];
         $_SESSION['idu']     = $hasil['id_profil'];
         
-        header("Location:home.php");
+        header("Location:otp.html");
     }
  else {
         header("Location:index.php?e=4");
