@@ -56,7 +56,7 @@ class TabelGrid {
    
    public function tbodyFromArray($qobj, $action=false, $link,  $fieldAction, $actionName){
        $this->html .= "<tbody> ";
-       while($hasil = mysql_fetch_assoc($qobj)){
+       while($hasil = mysqli_fetch_assoc($qobj)){
            $this->html .= "<tr class=\"active\"> ";
            foreach ($hasil as $key => $values) {
              $this->html .= "<td>".$values."</td>";

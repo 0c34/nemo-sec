@@ -21,6 +21,7 @@ echo "<!DOCTYPE html>
 
             }
         </style>
+        <meta name=\"description\" content=".$_GET['tab'].">
     </head>
     <body>
         <nav class=\"navbar navbar-inverse\" role=\"navigation\">

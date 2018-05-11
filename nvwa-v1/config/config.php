@@ -9,9 +9,9 @@
 //db config
  
 define("USER", "root");
-define("PASS", "saltiga");
+define("PASS", "admin321");
 define("HOST", "localhost");
-define("DBN",  "nemo_dwp");
+define("DBN",  "nemosec");
 
 
 //directory config

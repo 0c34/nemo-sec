@@ -1,60 +1,61 @@
 <!DOCTYPE html>
-    <head>
-       <title>Broken Auth</title>
-       <link rel="stylesheet" href="../../css/bootstrap.min.css">
-       <script type="text/javascript" src="../../js/jquery-1.11.2.min.js"></script>
-       <style type="text/css">
-           
-       </style>
-   </head>
-   <body>
-       <nav class="navbar navbar-inverse" role="navigation">
-           <div class="navbar-header">
-               <a class="navbar-brand" href="../../index.php">Nemo Security</a>
-           </div>
-           </nav>
-<script type="text/javascript">
-   var base_url = "http://nemosec.id"
-   var redirect_url = base_url + "/v/brokenauth/home.php"
-    $(document).ready(function(){
-        $("#otp").val('')
-        $("#vrfy").click(function(){
-            var otp = $("#otp").val()
-            var otpdata = {
-                    otpcode : otp
-            }
-            $.ajax({
-                type : "POST",
-                url : base_url + "/v/brokenauth/ajax_otp/otp-verification.php",
-                data : otpdata,
-                success : function(data){
-                    var res = JSON.parse(data)
-                    if(res.success == '1'){
-                        window.location.replace(redirect_url);
-                    }else{
-                        $("#otp").val('')
-                        alert(res.message)
-                    }
+
+<head>
+    <title>Broken Auth</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <script type="text/javascript" src="../../js/jquery-1.11.2.min.js"></script>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="../../index.php">Nemo Security</a>
+        </div>
+    </nav>
+    <script type="text/javascript">
+        var base_url = "http://localhost"
+        var redirect_url = base_url + "/v/brokenauth/home.php"
+        $(document).ready(function() {
+            $("#otp").val('')
+            $("#vrfy").click(function() {
+                var otp = $("#otp").val()
+                var otpdata = {
+                    otpcode: otp
                 }
+                $.ajax({
+                    type: "POST",
+                    url: base_url + "/v/brokenauth/ajax_otp/otp-verification.php",
+                    data: otpdata,
+                    success: function(data) {
+                        var res = JSON.parse(data)
+                        if (res.success == '1') {
+                            window.location.replace(redirect_url);
+                        } else {
+                            $("#otp").val('')
+                            alert(res.message)
+                        }
+                    }
+                })
             })
         })
-   })
-    
-</script>
-<div class="container">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-    <h2>Two Step Verification</h2>
-        <img src="img/SMS-256.png">
-        </br>
-        </br>
-        <form class="form-inline" role="form">
-            <label for="nama" class="control-label">OTP Verification : </label>
-            <div class="form-group">
+    </script>
+    <div class="container">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h2>Two Step Verification</h2>
+            <img src="img/SMS-256.png">
+            </br>
+            </br>
+            <form class="form-inline" role="form">
+                <label for="nama" class="control-label">OTP Verification : </label>
+                <div class="form-group">
                     <input type="text" id="otp" class="form-control" style="width: 80px" maxlength="6" required="">
-            </div>
-            <input type="button" id="vrfy" class="btn btn-primary" value="Verify">
-        </form>
+                </div>
+                <input type="button" id="vrfy" class="btn btn-primary" value="Verify">
+            </form>
+        </div>
+        <div class="col-md-3"></div>
     </div>
-    <div class="col-md-3"></div>
-</div>

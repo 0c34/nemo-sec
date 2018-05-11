@@ -23,7 +23,7 @@ if ($vStatus['sqli'] == 'false'){
     $dbh = new DB();
     $query = "SELECT * FROM peserta_pns WHERE id = $id";
     $query = $dbh->fetch_All($query);
-    $q = mysql_fetch_assoc($query);
+    $q = mysqli_fetch_assoc($query);
 ?>
 <html>
     <head>

@@ -20,7 +20,7 @@ $pass  = $_POST['pass'];
 $db = new DB();
 $query = "SELECT * FROM login_user WHERE uname = '$uname' AND pass = '$pass'";
 $query = $db->fetch_All($query);
-$hasil = mysql_fetch_row($query);
+$hasil = mysqli_fetch_row($query);
 //print_r($hasil);
 if($hasil > 0) {
     $_SESSION['id'] = $hasil[0];

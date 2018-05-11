@@ -19,7 +19,7 @@ if ($vStatus['sqli'] == 'false'){
     $query = "SELECT * FROM peserta_pns WHERE no_p = $nop";
     
     $query = $dbh->fetch_All($query);
-    $q = mysql_fetch_assoc($query);
+    $q = mysqli_fetch_assoc($query);
 ?>
 <html>
     <head>

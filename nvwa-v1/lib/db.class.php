@@ -18,20 +18,19 @@ class DB {
         
         public function __construct() {
 
-            $dbh = mysql_connect(HOST, USER, PASS) or die(mysql_error());
-            mysql_select_db(DBN) or die(mysql_error());
-        }
+            $this->dbH = mysqli_connect(HOST, USER, PASS,'nemosec');
+            }
               
         /*fungsi untuk mengambil semua row pada tabel
             nilai kembali berupa array dari tabel
          *          */
         public function fetch_All($query){
-            $q = mysql_query($query) or die(mysql_error());
+            $q = mysqli_query($this->dbH, $query) or die(mysqli_error($this->dbH));
             return $q;
             //return $hasil;
         }
           
-        public function update($query){
+        /* public function update($query){
             try{
              $q = $this->dbH->exec($query);
              return $q;
@@ -39,7 +38,7 @@ class DB {
             catch (Exception $e){
                 echo "<div class=\"alert alert-danger \">".$e->getMessage()."</div>";
             }
-        }
+        } */
         /*fungsi destruktor*/
         public function __destruct() {
             $this->dbH = NULL;

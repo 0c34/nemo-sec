@@ -37,7 +37,7 @@ echo "<!DOCTYPE html>
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <a class="btn btn-lg btn-primary" href='v/sqli/'>SQL INJECTION</a>
-        <a class="btn btn-lg btn-success" href="v/xss/">XSS</a>
+        <a class="btn btn-lg btn-success" href="v/xss/index.php?tab=profil">XSS</a>
         <a class="btn btn-lg btn-danger" href="v/idor/">IDOR</a>
         <a class="btn btn-lg btn-success" href="v/brokenauth/">Broken Auth</a>
         <a class="btn btn-lg btn-primary" href="v/lfi/index.php?page=home.php">LFI</a>
